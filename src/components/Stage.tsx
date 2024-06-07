@@ -22,7 +22,7 @@ const Stage: FC<TeaserProps> = ({ className, ...rest }) => {
                 loop
                 autoPlay
                 playsInline
-                src="/stage-hero.mp4"
+                src="/one-webdev/stage-hero.mp4"
             />
             <h1>Headline</h1>
             <p>
