@@ -1,0 +1,13 @@
+@scope (.is-where-demo) {
+    :is(section.is-styling, aside.is-styling, footer.is-styling) a {
+        color: red;
+    }
+
+    :where(section.where-styling, aside.where-styling, footer.where-styling) a {
+        color: orange;
+    }
+
+    footer a {
+        color: blue;
+    }
+}

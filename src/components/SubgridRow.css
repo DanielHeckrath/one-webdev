@@ -1,0 +1,16 @@
+@scope (.subgrid-row) {
+    :scope {
+        --card-num-rows: 6;
+        --card-num-columns: 3;
+
+        display: grid;
+        grid-template-columns: repeat(var(--card-num-columns), 1fr);
+        grid-template-rows: repeat(var(--card-num-rows), min-content);
+        grid-column-gap: 1rem;
+        grid-row-gap: 2rem;
+    }
+
+    :scope > * {
+        grid-row: span var(--card-num-rows);
+    }
+}

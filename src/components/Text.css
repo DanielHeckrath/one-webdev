@@ -1,0 +1,7 @@
+@layer components {
+    @scope (.text-container) {
+        :scope {
+            padding: var(--spacing-10) 0;
+        }
+    }
+}

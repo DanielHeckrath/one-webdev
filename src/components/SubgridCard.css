@@ -1,0 +1,25 @@
+@scope (.subgrid-card) {
+    :scope {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: subgrid;
+        grid-row-gap: 0;
+        border: solid 1px var(--color-black-10);
+    }
+
+    .subitem:not(:has(img)) {
+        padding: 0 1rem;
+    }
+
+    .technical-details {
+        display: grid;
+        grid-row: span 2;
+        grid-template-rows: subgrid;
+    }
+
+    img {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+    }
+}

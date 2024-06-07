@@ -1,0 +1,194 @@
+.baseline-indicator {
+    --text-primary: #1b1b1b;
+
+    --baseline-high-bg: #e6f4ea;
+    --baseline-high-engine-bg: #ceead6;
+    --baseline-high-img: url(/high.1cadd1dd8633aafe4118.svg);
+    --baseline-high-check: #099949;
+    --baseline-low-bg: #e8f0fe;
+    --baseline-low-engine-bg: #d2e3fc;
+    --baseline-low-check: #1a73e8;
+    --baseline-low-img: url(/low.f0f04252a312a99f0354.svg);
+    --baseline-low-pill-bg: #3367d6;
+    --baseline-low-pill-color: #f1f3f4;
+    --baseline-limited-bg: #f1f3f4;
+    --baseline-limited-engine-bg: #e3e6e8;
+    --baseline-limited-img: url(/limited.33014e3dcdb86f37e0c8.svg);
+    --baseline-limited-check: #1e8e3e;
+    --baseline-limited-cross: #ea8600;
+
+    --baseline-bg: var(--baseline-limited-bg);
+    --baseline-engine-bg: var(--baseline-limited-engine-bg);
+    --baseline-img: var(--baseline-limited-img);
+    --baseline-check: var(--baseline-limited-check);
+    --baseline-cross: var(--baseline-limited-cross);
+
+    background: var(--baseline-bg);
+    border-radius: .25rem;
+    margin: 1rem 0;
+    padding-left: 3.8125rem;
+
+    &.low {
+        --baseline-bg: var(--baseline-low-bg);
+        --baseline-engine-bg: var(--baseline-low-engine-bg);
+        --baseline-img: var(--baseline-low-img);
+        --baseline-check: var(--baseline-low-check);
+        --baseline-pill-bg: var(--baseline-low-pill-bg);
+        --baseline-pill-color: var(--baseline-low-pill-color);
+    }
+
+    &.high {
+        --baseline-bg: var(--baseline-high-bg);
+        --baseline-engine-bg: var(--baseline-high-engine-bg);
+        --baseline-img: var(--baseline-high-img);
+        --baseline-check: var(--baseline-high-check);
+    }
+
+    summary {
+        --chevron-size: 0.6875rem;
+        --chevron-padding-left: 0.75rem;
+        --chevron-padding-right: 1.25rem;
+        align-items: center;
+        cursor: pointer;
+        display: flex;
+        flex-wrap: wrap;
+        gap: .5rem;
+        justify-content: space-between;
+        padding: 1rem 0;
+        padding-right: calc(var(--chevron-padding-left) + var(--chevron-size) + var(--chevron-padding-right));
+        position: relative;
+
+        .indicator {
+            --width: 2.3125rem;
+            background-image: var(--baseline-img);
+            background-position: 50%;
+            background-repeat: no-repeat;
+            background-size: contain;
+            display: block;
+            height: 2.25rem;
+            left: calc(-.5rem - var(--width));
+            position: absolute;
+            top: 1rem;
+            width: var(--width);
+        }
+
+        h2 {
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0;
+            line-height: 1.5;
+            margin: 0;
+            padding: .375rem 0;
+
+            .not-bold {
+                font-weight: 400;
+            }
+        }
+
+        .pill {
+            background: var(--baseline-pill-bg);
+            border-radius: .125rem;
+            color: var(--baseline-pill-color);
+            font-size: .75rem;
+            font-weight: 600;
+            margin-right: auto;
+            padding: 0 .25rem;
+            text-transform: uppercase;
+        }
+
+        .browsers {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .5rem;
+
+            .engine {
+                background: var(--baseline-engine-bg);
+                border-radius: 2rem;
+                display: flex;
+                flex-wrap: wrap;
+                gap: .5rem;
+                padding: .5rem .625rem;
+
+                .browser {
+                    display: flex;
+
+                    &:before {
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        content: "";
+                        display: block;
+                        height: 1.25rem;
+                        width: 1.25rem;
+                    }
+
+                    &:after {
+                        background-color: var(--baseline-cross);
+                        content: "";
+                        display: block;
+                        height: 1.25rem;
+                        -webkit-mask-image: url(/browser-cross.4952f9cf19b873718764.svg);
+                        mask-image: url(/browser-cross.4952f9cf19b873718764.svg);
+                        -webkit-mask-repeat: no-repeat;
+                        mask-repeat: no-repeat;
+                        -webkit-mask-size: contain;
+                        mask-size: contain;
+                        width: 1rem;
+                    }
+
+                    &.supported:after {
+                        background-color: var(--baseline-check);
+                        -webkit-mask-image: url(/browser-check.d960a1037f7d1ffb1eec.svg);
+                        mask-image: url(/browser-check.d960a1037f7d1ffb1eec.svg);
+                    }
+
+                    &.chrome:before {
+                        background-image: url(/chrome.5e791c51c323fbb93c31.svg);
+                    }
+
+                    &.firefox:before {
+                        background-image: url(/firefox.1eabb4da07c095ca04fa.svg);
+                    }
+
+                    &.edge:before {
+                        background-image: url(/edge.741dffaf92fcae238b84.svg);
+                    }
+
+                    &.safari:before {
+                        background-image: url(/safari.2532e793299f00dcf5e2.svg);
+                    }
+                }
+            }
+        }
+
+        .icon-chevron {
+            --icon-size: var(--chevron-size);
+            --icon-primary: var(--text-primary);
+            position: absolute;
+            right: var(--chevron-padding-right);
+        }
+    }
+
+    .extra {
+        padding-bottom: 1.5rem;
+        padding-right: 1rem;
+    }
+
+    .icon {
+        --size: var(--icon-size, 1rem);
+        background-color: var(--icon-primary);
+        display: inline-block;
+        flex-shrink: 0;
+        height: var(--size);
+        -webkit-mask-position: center;
+        mask-position: center;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        vertical-align: middle;
+        width: var(--size);
+
+        &.icon-chevron {
+            -webkit-mask-image: url(/chevron.05a124d379047e16d746.svg);
+            mask-image: url(/chevron.05a124d379047e16d746.svg);
+        }
+    }
+}

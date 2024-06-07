@@ -1,0 +1,107 @@
+.anchor {
+    background: linear-gradient(45deg, blueviolet, blue);
+    font-size: 2rem;
+    display: grid;
+    place-items: center;
+    border-radius: 100%;
+    aspect-ratio: 1 / 1;
+    width: 3.5rem;
+    line-height: 0;
+    margin: 20dvh auto;
+
+    p {
+        filter: brightness(2);
+    }
+}
+
+.positioned-element {
+    position: absolute;
+
+    background: #333;
+    border-radius: 0.75rem;
+    color: white;
+    padding: 1rem;
+    width: 500px;
+    line-height: 1.5;
+}
+
+.scoped-anchors {
+    li {
+        margin-bottom: 1rem;
+    }
+}
+
+@layer utilities {
+    /* Bottom Anchor */
+    .anchor-b-t {
+        bottom: anchor(top);
+    }
+
+    .anchor-b-l {
+        bottom: anchor(left);
+    }
+
+    .anchor-b-r {
+        bottom: anchor(right);
+    }
+
+    .anchor-b-b {
+        bottom: anchor(bottom);
+    }
+
+    /* Top Anchor */
+    .anchor-t-t {
+        top: anchor(top);
+    }
+
+    .anchor-t-l {
+        top: anchor(left);
+    }
+
+    .anchor-t-r {
+        top: anchor(right);
+    }
+
+    .anchor-t-b {
+        top: anchor(bottom);
+    }
+
+    /* Right Anchor */
+    .anchor-r-t {
+        right: anchor(top);
+    }
+
+    .anchor-r-l {
+        right: anchor(left);
+    }
+
+    .anchor-r-r {
+        right: anchor(right);
+    }
+
+    .anchor-r-b {
+        right: anchor(bottom);
+    }
+
+    /* Left Anchor */
+    .anchor-l-t {
+        left: anchor(top);
+    }
+
+    .anchor-l-l {
+        left: anchor(left);
+    }
+
+    .anchor-l-r {
+        left: anchor(right);
+    }
+
+    .anchor-l-b {
+        left: anchor(bottom);
+    }
+
+    /* Justify Anchor Center */
+    .justify-self-ac {
+        justify-self: anchor-center;
+    }
+}

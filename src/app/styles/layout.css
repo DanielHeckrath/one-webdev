@@ -1,0 +1,73 @@
+@layer layouts {
+    :root {
+        --body-max-width: 1980px;
+        --main-grid-content-max-width: 1980px;
+        --main-grid-column-min-width: 60px;
+        --main-grid-column-max-width: 96px;
+        --main-grid-breakout-width: 16px;
+        --main-grid-gap-width: 16px;
+
+        @media screen and (min-width: 1200px) {
+            --main-grid-content-max-width: 1980px;
+            --main-grid-column-min-width: 60px;
+            --main-grid-column-max-width: 96px;
+            --main-grid-breakout-width: 96px;
+            --main-grid-gap-width: 24px;
+        }
+    }
+
+    body {
+        max-width: var(--body-max-width);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .main-grid {
+        display: grid;
+        max-width: var(--main-grid-content-max-width);
+        grid-template-columns: [full-width-start breakout-start] minmax(var(--main-grid-breakout-width), 1fr)
+                [content-start] repeat(11, [column-start] 1fr [column-end gap-start] var(--main-grid-gap-width) [gap-end])
+                [column-start] 1fr [column-end content-end]
+                minmax(var(--main-grid-breakout-width), 1fr) [breakout-end full-width-end];
+    }
+
+    .main-grid > .main-grid {
+        grid-template-columns: subgrid;
+    }
+
+    @media screen and (width >= 1200px) {
+        .main-grid {
+            grid-template-columns: [full-width-start] minmax(0, 1fr)
+                [breakout-start] var(--main-grid-breakout-width)
+                [content-start] repeat(11, [column-start] minmax(var(--main-grid-column-min-width), var(--main-grid-column-max-width)) [column-end gap-start] var(--main-grid-gap-width) [gap-end])
+                [column-start] minmax(var(--main-grid-column-min-width), var(--main-grid-column-max-width)) [column-end content-end]
+                var(--main-grid-breakout-width) [breakout-end]
+                minmax(0, 1fr) [full-width-end];
+        }
+    }
+
+    :where(.main-grid > *),
+    .content {
+        grid-column: content-start / content-end;
+    }
+
+    .breakout {
+        grid-column: breakout-start / breakout-end;
+    }
+
+    .full-width {
+        grid-column: full-width-start / full-width-end;
+    }
+
+    .highlight {
+        grid-column: column-start 4 / column-end 9;
+    }
+
+    .indent-right {
+        grid-column: content-start / column-end 7;
+    }
+
+    .indent-left {
+        grid-column: column-start 5 / content-end;
+    }
+}

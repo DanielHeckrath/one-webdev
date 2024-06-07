@@ -1,0 +1,3 @@
+@layer reset, framework, default, themes, patterns, layouts, components, utilities;
+
+@import "./theme.css" layer(themes);

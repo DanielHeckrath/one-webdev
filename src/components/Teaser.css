@@ -1,0 +1,64 @@
+@scope (.teaser) {
+  :scope {
+    --teaser-wide: false;
+    container-name: teaser;
+
+    @media (width > 1200px) {
+      --teaser-wide: true;
+      display: grid;
+      grid-template-columns: [image-start] repeat(4, 1fr) [image-end headline-start copy-start] repeat(8, 1fr) [headline-end copy-end];
+      grid-template-rows: [image-start headline-start] min-content [headline-end copy-start] min-content [copy-end] 1fr [image-end];
+      gap: 24px;
+    }
+
+    @container (width > 800px) {
+      --teaser-wide: true;
+      display: grid;
+      grid-template-columns: [image-start] repeat(4, 1fr) [image-end headline-start copy-start] repeat(8, 1fr) [headline-end copy-end];
+      grid-template-rows: [image-start headline-start] min-content [headline-end copy-start] min-content [copy-end] 1fr [image-end];
+      gap: 24px;
+    }
+
+    @container (width < 800px) {
+      --teaser-wide: false;
+      display: block;
+    }
+  }
+
+  /*:scope:not(:has(img)) {
+    --teaser-wide: false;
+    display: block;
+  }*/
+
+  :scope > img {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    width: 100%;
+    grid-area: image;
+
+    @container (width > 800px) {
+      aspect-ratio: 4 / 3;
+    }
+  }
+
+  :scope > h2 {
+    font-size: max(1.25em, 1.13em + 2cqi);
+    grid-area: headline;
+
+    @container (width > 400px) {
+      font-size: max(1.5em, 1.23em + 2cqi);
+    }
+
+    @container teaser style(--teaser-wide: true) {
+      margin-bottom: 0;
+    }
+  }
+
+  :scope > p {
+    grid-area: copy;
+
+    @container style(--teaser-wide: true) {
+      margin: 0;
+    }
+  }
+}

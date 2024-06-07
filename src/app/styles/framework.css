@@ -1,0 +1,16 @@
+@layer framework {
+    @layer layout {
+    }
+}
+
+@layer framework {
+    p {
+        margin-block: 1rem;
+    }
+}
+
+@layer framework.layout {
+    body .main-grid p {
+        margin-block: 2rem;
+    }
+}

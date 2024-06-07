@@ -1,0 +1,59 @@
+@scope (.container-size-queries-demo) {
+    .posts {
+        display: block;
+
+        @media (width > 600px) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        @media (width > 1200px) {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+
+    .post {
+        container-type: inline-size;
+    }
+
+    .card {
+        :where(h2) {
+            font-size: max(1.25em, 1.13em + 2cqi);
+        }
+
+        @container (width > 400px) {
+            font-size: max(1.5em, 1.23em + 2cqi);
+        }
+    }
+
+    .size-container {
+        container-type: size;
+        container-name: wide narrow;
+        width: 20em;
+        height: 20em;
+        background: lightblue;
+        padding: var(--spacing-4);
+        overflow: hidden;
+    }
+
+    :is(.child-1, .child-2) {
+        background: lightgoldenrodyellow;
+        padding: 1rem;
+        margin-bottom: 1rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        @container wide (orientation: landscape) and (min-width: 20em) {
+            /* styles applied to descendants of .sizeContainer if size features match */
+            background: goldenrod;
+        }
+
+        @container narrow (orientation: portrait) or (max-width: 20em) {
+            /* styles applied to descendants of .sizeContainer if size features match */
+            background: firebrick;
+        }
+    }
+}

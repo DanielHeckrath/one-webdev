@@ -1,0 +1,82 @@
+:root {
+    color-scheme: light dark;
+
+    --primary-foreground-color: light-dark(#0d0d0d, #fdfdfd);
+    --background-color: light-dark(#fff, #0d0d0d);
+
+    /* Primary Colors */
+    --color-black: #000;
+    --color-black-10: color-mix(in srgb, #000, #fff 10%);
+    --color-black-30: color-mix(in srgb, #000, #fff 30%);
+    --color-white: #fff;
+    --color-grey: #a19e9d;
+
+    /*Secondary Colors*/
+    --color-red: #ec6668;
+    --color-yellow: #ffcd44;
+    --color-green: #46b27e;
+    --color-blue: #00a6ce;
+    --color-magenta: #c34580;
+
+    /*Gradients*/
+    --color-red-yellow: linear-gradient(90deg, var(--color-red) 0%, var(--color-yellow) 100%);
+    --color-yellow-green: linear-gradient(90deg, var(--color-yellow) 0%, var(--color-green) 100%);
+    --color-green-blue: linear-gradient(90deg, var(--color-green) 0%, var(--color-blue) 100%);
+    --color-blue-magenta: linear-gradient(90deg, var(--color-blue) 0%, var(--color-magenta) 100%);
+    --color-magenta-red: linear-gradient(90deg, var(--color-magenta) 0%, var(--color-red) 100%);
+
+    /*Gradients 180deg*/
+    --color-red-yellow-180: linear-gradient(180deg, var(--color-red) 0%, var(--color-yellow) 100%);
+    --color-yellow-green-180: linear-gradient(180deg, var(--color-yellow) 0%, var(--color-green) 100%);
+    --color-green-blue-180: linear-gradient(180deg, var(--color-green) 0%, var(--color-blue) 100%);
+    --color-blue-magenta-180: linear-gradient(180deg, var(--color-blue) 0%, var(--color-magenta) 100%);
+    --color-magenta-red-180: linear-gradient(180deg, var(--color-magenta) 0%, var(--color-red) 100%);
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--primary-foreground-color);
+    color-scheme: light;
+}
+
+.red {
+    color-scheme: dark;
+    background-color: var(--color-red);
+    color: var(--primary-foreground-color);
+}
+
+.yellow {
+    color-scheme: light;
+    background-color: var(--color-yellow);
+    color: var(--primary-foreground-color);
+}
+
+.green {
+    color-scheme: dark;
+    background-color: var(--color-green);
+    color: var(--primary-foreground-color);
+}
+
+.blue {
+    color-scheme: dark;
+    background-color: var(--color-blue);
+    color: var(--primary-foreground-color);
+}
+
+.magenta {
+    color-scheme: dark;
+    background-color: var(--color-magenta);
+    color: var(--primary-foreground-color);
+}
+
+.light {
+    color-scheme: light;
+    background-color: var(--background-color);
+    color: var(--primary-foreground-color);
+}
+
+.dark {
+    color-scheme: dark;
+    background-color: var(--background-color);
+    color: var(--primary-foreground-color);
+}

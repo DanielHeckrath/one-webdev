@@ -1,0 +1,23 @@
+.popover-demo {
+    position: relative;
+}
+
+.popover-button {
+    anchor-name: --anchor-button;
+}
+
+.styled-popover {
+    &:popover-open {
+        width: 300px;
+        height: 200px;
+        position: fixed;
+        inset: unset;
+        bottom: 5px;
+        right: 5px;
+        margin: 0;
+    }
+
+    &::backdrop {
+        background: rgba(0, 0, 0, 0.6);
+    }
+}

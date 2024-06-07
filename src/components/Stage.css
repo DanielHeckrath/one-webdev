@@ -1,0 +1,41 @@
+@scope (.stage) {
+    :scope {
+        grid-template-columns: subgrid;
+        grid-template-rows: [headline-start] min-content [headline-end copy-start] min-content [copy-end];
+    }
+
+    :is(img, video) {
+        grid-column: full-width-start / full-width-end;
+        grid-row: image-start / image-end;
+        z-index: -1;
+        aspect-ratio: 21 / 10;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    h1 {
+        grid-column: content-start / content-end;
+        grid-row: headline-start / headline-end;
+        font-size: 4rem;
+    }
+
+    p {
+        grid-column: content-start / column-end 6;
+        grid-row: copy-start / copy-end;
+    }
+
+    :scope:has(img, video) {
+        color-scheme: dark;
+        color: var(--primary-foreground-color);
+        border-image: linear-gradient(color(from var(--color-blue) srgb r b g / .5), color(from var(--color-red) srgb r b g / 1)) fill 1;
+        grid-template-rows: [image-start] 1fr [headline-start] min-content [headline-end copy-start] min-content [copy-end image-end];
+
+        p {
+            margin-bottom: 4em;
+        }
+    }
+
+    :scope:not(:has(img, video)) {
+        padding: 2em 0;
+    }
+}
