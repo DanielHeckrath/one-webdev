@@ -9,7 +9,9 @@ interface TeaserProps extends HTMLAttributes<HTMLDivElement> {
 const Teaser: FC<TeaserProps> = ({ image = true, className, ...rest }) => {
     return (
         <div className={classNames('teaser', className)} {...rest}>
-            {image ? <img src="/614-400x300.jpg" alt="Image" /> : undefined}
+            {image ? (
+                <img src="/one-webdev/614-400x300.jpg" alt="Image" />
+            ) : undefined}
             <h2>Card title</h2>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque

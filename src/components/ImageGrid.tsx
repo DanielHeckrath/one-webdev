@@ -13,15 +13,15 @@ const ImageGrid: FC<HTMLAttributes<HTMLDivElement>> = ({ className }) => {
             )}
         >
             <figure>
-                <img src="/hero-image.webp" alt="Image 1" />
+                <img src="/one-webdev/hero-image.webp" alt="Image 1" />
                 <figcaption>This is a really great image</figcaption>
             </figure>
             <figure>
-                <img src="/hero-image.webp" alt="Image 1" />
+                <img src="/one-webdev/hero-image.webp" alt="Image 1" />
                 <figcaption>Another image as great as the first</figcaption>
             </figure>
             <figure>
-                <img src="/hero-image.webp" alt="Image 1" />
+                <img src="/one-webdev/hero-image.webp" alt="Image 1" />
                 <figcaption>Great images come in threes</figcaption>
             </figure>
         </div>

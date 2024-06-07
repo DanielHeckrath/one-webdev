@@ -62,7 +62,7 @@ const PopoverDemo: FC<PopoverDemoProps> = ({ className, ...rest }) => {
         <section className={classNames(className, 'popover-demo')} {...rest}>
             <h2>Popovers</h2>
             <p>Creating popovers in web-applications is a common problem.</p>
-            <img src="/popper-trend.png" />
+            <img src="/one-webdev/popper-trend.png" />
             <h3>Creating popovers</h3>
             <p>
                 We can create declare popover elements using the popover

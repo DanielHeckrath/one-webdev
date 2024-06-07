@@ -10,7 +10,7 @@ const HasDemo: FC<HasDemoProps> = ({ className, ...rest }) => {
     return (
         <div className={classNames(className, 'has-demo')} {...rest}>
             <h2>:has()</h2>
-            <img src="/has-meme.jpeg" alt=":has() meme" />
+            <img src="/one-webdev/has-meme.jpeg" alt=":has() meme" />
             <p>
                 Using the :has() pseudo-class function allows us to select a
                 parent or a previous sibling element in relevance to a relative

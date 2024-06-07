@@ -18,7 +18,9 @@ const Quote: FC<QuoteProps> = ({ className, quoteClassName, image }) => {
             )}
             cite="https://datatracker.ietf.org/doc/html/rfc1149"
         >
-            {image ? <img src="/614-400x300.jpg" alt="Image" /> : undefined}
+            {image ? (
+                <img src="/one-webdev/614-400x300.jpg" alt="Image" />
+            ) : undefined}
             <p className={classNames('quote', quoteClassName)}>
                 Avian carriers can provide high delay, low throughput, and low
                 altitude service. The connection topology is limited to a single
